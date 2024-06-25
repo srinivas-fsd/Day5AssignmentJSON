@@ -48,9 +48,9 @@
 
           };
 
-          console.log("************** Resume ************************");
-
-          for(key in resumeObj) 
+    console.log("************** Resume  ************************");
+    console.log("Looping through for and for..in loop")
+          for(key in resumeObj) //for in
                 { 
                     if(key=="company")
                     {
@@ -73,7 +73,7 @@
                         console.log("Project Details : ")
                         let length = resumeObj[key].length;
                         //looping through project details
-                        for(let i=0;i<length;i++)
+                        for(let i=0;i<length;i++) 
                         {
                             console.log(key + " " + (i+1) + " : ");
                             console.log("Project Name   : " + resumeObj[key][i].title);
@@ -101,6 +101,98 @@
                    
 
                 }
+
+   console.log("************** Looping through forEach loop ************************");
+        Object.entries(resumeObj).forEach(function([key,value])
+                    {
+
+                        if(key=="company")
+                        {
+                            console.log("Company Details : ");
+                            Object.entries(resumeObj[key]).forEach(function([key,value])
+                                {
+                                    console.log("Company " + (+(key)+1) + " : ");
+                                    console.log("Name           : " + value.name);
+                                    console.log("Joining Year   : " + value.from);
+                                    console.log("Relieving Year : " + value.to);
+                                });
+
+                        }
+                        else if(key=="projects")
+                        {
+                            
+                            console.log("Project Details : ")
+                            let length = resumeObj[key].length;
+                            Object.entries(resumeObj[key]).forEach(function([key,value])
+                                {
+                                    console.log("Project " + (+(key)+1) + " : ");
+                                    console.log("Project Name   : " + value.title);
+                                    console.log("Front-end      : " + value.frontEnd);
+                                    console.log("Back-end       : " + value.backEnd);
+                                    console.log("Description    : " + value.description);
+                                });
+                        }
+                        else if(key=="education")
+                        {
+
+                            console.log("Education Details : ");
+                            console.log("Degree     : " + resumeObj[key].degree);
+                            console.log("Percentage : " + resumeObj[key].percentage);
+                            console.log("Passed Out Year   : " + resumeObj[key].year);
+                            
+                        }
+                        else
+                        {
+                            console.log(key + "  : " + resumeObj[key] );
+                        }
+                        
+                });
+
+    console.log("************** Looping through for..of loop ************************");
+         for (const [key, value] of Object.entries(resumeObj))
+            {
+
+                if(key=="company")
+                {
+                    console.log("Company Details : ");
+                    Object.entries(resumeObj[key]).forEach(function([key,value])
+                        {
+                            console.log("Company " + (+(key)+1) + " : ");
+                            console.log("Name           : " + value.name);
+                            console.log("Joining Year   : " + value.from);
+                            console.log("Relieving Year : " + value.to);
+                        });
+
+                }
+                else if(key=="projects")
+                {
+                    
+                    console.log("Project Details : ")
+                    let length = resumeObj[key].length;
+                    Object.entries(resumeObj[key]).forEach(function([key,value])
+                        {
+                            console.log("Project " + (+(key)+1) + " : ");
+                            console.log("Project Name   : " + value.title);
+                            console.log("Front-end      : " + value.frontEnd);
+                            console.log("Back-end       : " + value.backEnd);
+                            console.log("Description    : " + value.description);
+                        });
+                }
+                else if(key=="education")
+                {
+
+                    console.log("Education Details : ");
+                    console.log("Degree     : " + resumeObj[key].degree);
+                    console.log("Percentage : " + resumeObj[key].percentage);
+                    console.log("Passed Out Year   : " + resumeObj[key].year);
+                    
+                }
+                else
+                {
+                    console.log(key + "  : " + resumeObj[key] );
+                }
+                
+        };
 
         </script>
     </body>

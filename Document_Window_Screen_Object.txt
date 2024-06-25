@@ -1,0 +1,39 @@
+    Difference between document , window object :
+
+    Document Object :
+        A document instance represents the entire HTML document within a web browser window. 
+        Accessing and altering the content, structure, and design of a web page is done through it.
+
+    Features of Document Object :
+        The document object provides a logical arrangement of the HTML elements on a website, allowing programmers to explore, alter, and alter the content dynamically.
+        We can pick specific elements based on their IDs, classes, or other attributes with the help of methods in the document object.
+        Document properties such as document.title, document.URL, and document.body provide information about the document's title, URL, and body, respectively.
+        We can create, modify, or delete elements, attributes, and text content on a webpage through the document object.
+
+    Example : 
+        document.title = "Doc Object Demo"
+        document.getElementById("PageContent")
+
+    Window Object :
+        The window object is the global object and it is the top most object in the hierarchy of the DOM.
+        The frame represents a browser window or frame that displays the contents of the webpage. 
+        The window object is created whenever a window appears on the screen.
+
+    Features of Window Object :
+        Variables and functions declared without the var, let, or const keyword become properties of the window object in JavaScript.
+        The window object provides properties like window.innerWidth, window.innerHeight, and window.navigator to provide information about the browser's dimensions, navigator object, and other related details.
+        Methods such as window.open(), window.close(), and window.location allow developers to control browser navigation, open new windows or tabs, and manipulate the current URL.
+        The window object provides functions such as setTimeout(), setInterval(), and clearTimeout() to manage time-based operations and execute code asynchronously.
+
+    Example :
+        window.open("https://www.gmail.com");
+
+    Screen Object :
+        It contains the information related to properties of the user's screen
+        We can access the  details of width, height, color depth, and pixel depth of the screen.
+        By modifying the layout according to the screen size and resolution, we can create responsive web designs with the help of the screen object
+
+    Example :
+        window.screen.height
+        window.screen.width
+        window.screen.pixelDepth
