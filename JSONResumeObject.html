@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title> 
+            JSON Object Reading
+        </title>
+    </head>
+    <body>
+           <h2> Resume creation using object and reading it through loop </h2>
+           <h3> Please check "Console" for the output</h3>
+       
+        <script>
+            
+          let resumeObj = {
+            name : "Srinivas",
+            age  : 35,
+            email : "srini1234@ht.com",
+            mobile : 7654321012,
+            objective : "Looking for a job related to JavaScript technology",
+            skills : ["JavaScript","Postgres",".Net"],
+            education : {
+                degree : "BTech IT",
+                percentage : 63,
+                year : 2011
+            },
+            company : [{
+                name : "wsoft pvt ltd",
+                from : 2014,
+                to : 2017
+            },
+            {
+                name : "cs pvt ltd",
+                from : 2021,
+                to : 2023
+            }
+            ],
+            projects :[{title : "MNP Automation",
+                frontEnd : "MS Excel",
+                backEnd : "MS SQL",
+                description : "Automatically downloading raw data from FTP and customizing customers"
+            },
+            {title : "Stock Management",
+             frontEnd : "C#.Net",
+             backEnd : "Postgres",
+             description : "Handling stocks, GRN and AP Invoice"
+            }
+            ],
+            languages : ["Tamil","Telugu","English"]
+
+          };
+
+          console.log("************** Resume ************************");
+
+          for(key in resumeObj) 
+                { 
+                    if(key=="company")
+                    {
+                        console.log("Company Details : ")
+                        let length = resumeObj[key].length;
+                        //looping through company details
+                        for(let i=0;i<length;i++)
+                        {
+                            console.log(key + " " + (i+1) + " : ");
+                            console.log("Name           : " + resumeObj[key][i].name);
+                            console.log("Joining Year   : " + resumeObj[key][i].from);
+                            console.log("Relieving Year : " + resumeObj[key][i].to);
+                        }
+
+                    }
+                    else if(key=="projects")
+                    {
+                        if(key=="company")
+                       {
+                        console.log("Project Details : ")
+                        let length = resumeObj[key].length;
+                        //looping through project details
+                        for(let i=0;i<length;i++)
+                        {
+                            console.log(key + " " + (i+1) + " : ");
+                            console.log("Project Name   : " + resumeObj[key][i].title);
+                            console.log("Front-end      : " + resumeObj[key][i].frontEnd);
+                            console.log("Back-end       : " + resumeObj[key][i].backEnd);
+                            console.log("Description    : " + resumeObj[key][i].description);
+                        }
+
+                      }
+
+                    }
+                    else if(key=="education")
+                    {
+
+                        console.log("Education Details : ");
+                        console.log("Degree     : " + resumeObj[key].degree);
+                        console.log("Percentage : " + resumeObj[key].percentage);
+                        console.log("Passed Out Year   : " + resumeObj[key].year);
+                        
+                    }
+                    else
+                    {
+                        console.log(key + "  : " + resumeObj[key] );
+                    }
+                   
+
+                }
+
+        </script>
+    </body>
+</html>
